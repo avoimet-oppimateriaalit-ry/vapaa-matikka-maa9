@@ -3,8 +3,8 @@
 1. Make a new repo with chosen name at GitHub; note: choose not to initialize it!
 2. Clone this repo to a local destination
 3. Rename the local repo to match the GitHub repo you created earlier
-4. Run 'git remote set-url origin https://github.com/\<your username\>/\<name of the repo\>.git
-5. Push the local repo to your GitHub repo with 'git push -u origin master>
+4. Run 'git remote set-url origin https://github.com/username/repo.git' (replace username and repo appropriately)
+5. Push the local repo to your GitHub repo with 'git push -u origin master'
 6. Get the contents of the commons submodule for your local repo with 'git submodule update --init'
 7. Rename file template.tex for whatever you wish the final .pdf to be called
 8. Make the same change for the TARGET parameter in Makefile
@@ -16,8 +16,9 @@
 14. Add authors to /config/authors.tex
 15. Check the .gitignore file is ok and make changes if necessary
 16. Choose the license you want and write it in LICENSE.md
-17. Check the document is processed ok (either 'make' or 'lualatex -shell-escape \<name of book\>.tex' at the root of the repo)
-18. Replace the contents of this README with whatever you want
+17. Check the document is processed ok (either 'make' or 'lualatex -shell-escape book.tex' at the root of the repo, replace book with the chosen name; using Makefile is the preferred option)
+18. Commit and push the changes, proceed with your project
+19. Replace the contents of this README with whatever you want
 
 # Work left to do with this repo and commons
 
