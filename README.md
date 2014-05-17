@@ -1,10 +1,10 @@
 # Näistä voi aloittaa:
 
-1. Radiaanin esittely
-2. Ylioppilastehtäviä kurssin aiheista
-3. Lukujonojen esittely (Fibonacci ym.)
-4. Aritmeettiset lukujonot ja summa
-5. Geometriset lukujonot ja summa
+1. Radiaanin esittely: trig_radiaani.tex
+2. Ylioppilastehtäviä kurssin aiheista: yotehtavia.tex
+3. Lukujonojen esittely (Fibonacci ym.): seq_kasitteet.tex
+4. Aritmeettiset lukujonot ja summa: seq_aritmeettinen.tex
+5. Geometriset lukujonot ja summa: seq_geometrinen.tex
 
 # Käsiteltäviä aiheita: trigonometria
 
