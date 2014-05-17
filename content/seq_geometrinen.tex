@@ -1,6 +1,6 @@
 \section{Geometrinen lukujono}
 
-Lukujonoa, jonka peräkkäisten jäsenten osamäärä on aina sama, sanotaan \termi{geometrinen lukujon}{geometriseksi lukujonoksi}. Tätä peräkkäisten jäsenten osamäärää merkitään yleensä kirjaimella $q$.
+Lukujonoa, jonka peräkkäisten jäsenten osamäärä on aina sama, sanotaan \termi{geometrinen lukujono}{geometriseksi lukujonoksi}. Tätä peräkkäisten jäsenten osamäärää merkitään yleensä kirjaimella $q$.
 
 \laatikko{
 Geometrinen lukujono $a_n$ jäsenille on voimassa ehto \( q = \frac{a_{n+1}}{a_n} \).
@@ -25,9 +25,9 @@ Lukujonon ensimmäinen jäsen on $a_1=4$ ja suhdeluku $q=\frac{12}{4}=3$.
 	3^{n-1} &= 243 & & | \, \ln\\
 	\ln 3^{n-1} &= \ln 243 \\
 	(n-1)\ln 3 &= \ln 243  & & | \, : \ln 3 \\
-	n-1 &= frac{\ln 243}{\ln 3} \\
-	n &= frac{\ln 243}{\ln 3} +1\\
-	n &= 6\\
+	n-1 &= \frac{\ln 243}{\ln 3} \\
+	n &= \frac{\ln 243}{\ln 3} +1\\
+	n &= 6
 \end{align*}
 
 Vastaus: Kuudes jäsen.
@@ -37,3 +37,26 @@ Vastaus: Kuudes jäsen.
 \laatikko{
 	Geometrisen lukujonon $n$ ensimmäisen jäsenen summa on \( S_n =  a_1 \frac{1-q^n}{1-q} \), kun $q \ne 1$.
 }
+
+\begin{esimerkki}
+
+Kuinka mones geometrisen lukujonon $100, 99, \frac{9801}{100}, \ldots$ jäsen on ensimmäinen, joka on pienempi kuin 10?
+
+Lukujonon ensimmäinen jäsen on $a_1=100$ ja suhdeluku $q=\frac{99}{100}$.
+
+\begin{align*}
+	            a_n &< 10  \\
+	a_1q^{n-1} &< 10  \\
+	100(\frac{99}{100})^{n-1} &< 10 & & | \, :100 \\
+	(\frac{99}{100})^{n-1} &< \frac{1}{10}  & & | \,  \ln \qquad \text{ln on aidosti kasvava funktio}\\
+	\ln (\frac{99}{100})^{n-1} &< \ln \frac{1}{10} \\
+	(n-1)\ln \frac{99}{100} &< -\ln 10  & & | \, : \ln \frac{99}{100} \quad <0 \\
+	n-1 &>  \frac{-\ln10}{\ln \frac{99}{100}} \\
+	n &> \frac{-\ln10}{\ln \frac{99}{100}} \approx 229,1  & & | \, \text {$n$ on kokonaisluku} \\
+	n &\ge 230
+\end{align*}
+
+Vastaus: 230. jäsen
+
+\end{esimerkki}
+
