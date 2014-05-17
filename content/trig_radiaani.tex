@@ -1,1 +1,58 @@
 \section{Radiaani}
+Kulman suuruuden mittarina käytetään usein asteita, joiden määritelmä on jokseenkin mielivaltainen: täyden kierroksen suuruudeksi on päätetty $360^\circ$. Nyt esitellään toinen kulman suuruuden yksikkö, radiaani.
+
+Piirretään kulman, jonka suuruus on $\alpha$, kärkipisteen ympärille $r$-säteinen ympyrä, josta kulman kyljet erottavat kaaren, jonka pituus on $c$. Nyt jos kulmaa $\alpha$ kasvatetaan, kaarenpituus $c$ kasvaa samassa suhteessa. Kaarenpituus $c$ olisi siis muuten hyvä mitta kulman suuruudelle, mutta se riippuu valitusta säteestä $r$.
+
+\begin{kuva}
+skaalaa(5)
+a = 0.24 * pi
+a_deg = 180 * a / pi
+P = geom.piste(0, 0)
+A = (1, 0)
+B = (cos(a), sin(a))
+geom.jana(P, A, "$r$", 0.5 * 0.75, puoli = False)
+geom.jana(P, B)
+geom.kaari(P, 0.75, 0, a_deg, "$c$", 0.5 * a_deg)
+geom.kulma(A, P, B, r"$\alpha$")
+\end{kuva}
+\begin{kuva}
+skaalaa(5)
+a = 0.24 * pi
+a_deg = 180 * a / pi
+P = geom.piste(0, 0)
+A = (1, 0)
+B = (cos(a), sin(a))
+geom.jana(P, A, "$r'$", 0.5 * 0.9, puoli = False)
+geom.jana(P, B)
+geom.kaari(P, 0.9, 0, a_deg, "$c'$", 0.5 * a_deg)
+geom.kulma(A, P, B, r"$\alpha$")
+\end{kuva}
+
+Jos valitaan kaarenpituudeksi jokin toinen luku $r'$, saadaan toinen kaarenpituus $c'$, mutta edelleen kulman kylkien erottamat sektori on yhdenmuotoinen alkuperäisen kanssa, joten kaaren pituuden suhde säteeseen on molemmissa sektoreissa sama:
+\[\frac{c}{r} = \frac{c'}{r'}.\]
+
+Tästä seuraa, että millä tahansa säteen $r$ valinnalla suhde $\frac{c}{r}$ säilyy vakiona samalle kulmalle $\alpha$. Siis suhde $\frac{c}{r}$ on luonnollinen kulman suuruuden mitta, jota kutsumme radiaaniksi:
+
+\begin{luoKuva}{radiaanimaaritelma}
+skaalaa(3)
+a = 0.24 * pi
+a_deg = 180 * a / pi
+P = geom.piste(0, 0)
+A = (1, 0)
+B = (cos(a), sin(a))
+geom.jana(P, A, "$r$", 0.5, puoli = False)
+geom.jana(P, B)
+geom.kaari(P, 1, 0, a_deg, "$c$", 0.5 * a_deg)
+geom.kulma(A, P, B, r"$\alpha$")
+\end{luoKuva}
+
+\laatikko{
+{\bf Radiaanin määritelmä}
+
+\raisebox{-.5\height}{\naytaKuva{radiaanimaaritelma}}
+Kulman $\alpha$ suuruus radiaaneina on $\displaystyle\frac{r}{c}$.
+}
+
+Kulman suuruus radiaaneina on kahden käyränpituuden suhteena paljas luku, mutta monesti merkitään kulman suuruuden perään rad korostamaan sitä, että kyseessä on kulma.
+
+
