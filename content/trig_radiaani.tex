@@ -1,7 +1,7 @@
 \section{Radiaani}
 Kulman suuruuden mittarina käytetään usein asteita, joiden määritelmä on jokseenkin mielivaltainen: täyden kierroksen suuruudeksi on päätetty $360^\circ$. Nyt esitellään toinen kulman suuruuden yksikkö, radiaani.
 
-Piirretään kulman, jonka suuruus on $\alpha$, kärkipisteen ympärille $r$-säteinen ympyrä, josta kulman kyljet erottavat kaaren, jonka pituus on $c$. Nyt jos kulmaa $\alpha$ kasvatetaan, kaarenpituus $c$ kasvaa samassa suhteessa. Kaarenpituus $c$ olisi siis muuten hyvä mitta kulman suuruudelle, mutta se riippuu valitusta säteestä $r$.
+Piirretään kulman, jonka suuruus on $\alpha$, kärkipisteen ympärille $r$-säteinen ympyrä, josta kulman kyljet erottavat kaaren, jonka pituus on $x$. Nyt jos kulmaa $\alpha$ kasvatetaan, kaarenpituus $x$ kasvaa samassa suhteessa. Kaarenpituus $x$ olisi siis muuten hyvä mitta kulman suuruudelle, mutta se riippuu valitusta säteestä $r$.
 
 \begin{kuva}
 skaalaa(5)
@@ -12,7 +12,7 @@ A = (1, 0)
 B = (cos(a), sin(a))
 geom.jana(P, A, "$r$", 0.5 * 0.75, puoli = False)
 geom.jana(P, B)
-geom.kaari(P, 0.75, 0, a_deg, "$c$", 0.5 * a_deg)
+geom.kaari(P, 0.75, 0, a_deg, "$x$", 0.5 * a_deg)
 geom.kulma(A, P, B, r"$\alpha$")
 \end{kuva}
 \begin{kuva}
@@ -24,14 +24,14 @@ A = (1, 0)
 B = (cos(a), sin(a))
 geom.jana(P, A, "$r'$", 0.5 * 0.9, puoli = False)
 geom.jana(P, B)
-geom.kaari(P, 0.9, 0, a_deg, "$c'$", 0.5 * a_deg)
+geom.kaari(P, 0.9, 0, a_deg, "$x'$", 0.5 * a_deg)
 geom.kulma(A, P, B, r"$\alpha$")
 \end{kuva}
 
-Jos valitaan kaarenpituudeksi jokin toinen luku $r'$, saadaan toinen kaarenpituus $c'$, mutta edelleen kulman kylkien erottamat sektori on yhdenmuotoinen alkuperäisen kanssa, joten kaaren pituuden suhde säteeseen on molemmissa sektoreissa sama:
-\[\frac{c}{r} = \frac{c'}{r'}.\]
+Jos valitaan kaarenpituudeksi jokin toinen luku $r'$, saadaan toinen kaarenpituus $x'$, mutta edelleen kulman kylkien erottamat sektori on yhdenmuotoinen alkuperäisen kanssa, joten kaaren pituuden suhde säteeseen on molemmissa sektoreissa sama:
+\[\frac{x}{r} = \frac{x'}{r'}.\]
 
-Tästä seuraa, että millä tahansa säteen $r$ valinnalla suhde $\frac{c}{r}$ säilyy vakiona samalle kulmalle $\alpha$. Siis suhde $\frac{c}{r}$ on luonnollinen kulman suuruuden mitta, jota kutsumme radiaaniksi:
+Tästä seuraa, että millä tahansa säteen $r$ valinnalla suhde $\frac{x}{r}$ säilyy vakiona samalle kulmalle $\alpha$. Siis suhde $\frac{x}{r}$ on luonnollinen kulman suuruuden mitta, jota kutsumme radiaaniksi:
 
 \begin{luoKuva}{radiaanimaaritelma}
 skaalaa(3)
@@ -42,7 +42,7 @@ A = (1, 0)
 B = (cos(a), sin(a))
 geom.jana(P, A, "$r$", 0.5, puoli = False)
 geom.jana(P, B)
-geom.kaari(P, 1, 0, a_deg, "$c$", 0.5 * a_deg)
+geom.kaari(P, 1, 0, a_deg, "$x$", 0.5 * a_deg)
 geom.kulma(A, P, B, r"$\alpha$")
 \end{luoKuva}
 
@@ -50,9 +50,66 @@ geom.kulma(A, P, B, r"$\alpha$")
 {\bf Radiaanin määritelmä}
 
 \raisebox{-.5\height}{\naytaKuva{radiaanimaaritelma}}
-Kulman $\alpha$ suuruus radiaaneina on $\displaystyle\frac{r}{c}$.
+Kulman $\alpha$ suuruus radiaaneina on $\displaystyle\frac{x}{r}$.
 }
 
 Kulman suuruus radiaaneina on kahden käyränpituuden suhteena paljas luku, mutta monesti merkitään kulman suuruuden perään rad korostamaan sitä, että kyseessä on kulma.
 
+Jos määritelmässä valitaan $r = 1$, nähdään että kulman suuruus radiaaneina voidaan tulkita kulman erottaman kaaren pituudeksi yksikköympyrällä.
 
+Täyskulma ($360^\circ$) on radiaaneina $2\pi$ rad, koska $1$-säteisen ympyrän kehän pituus on $2\pi$. Kaaren pituus on suoraan verrannollinen kulman suuruuteen, eli on olemassa reaaliluku $a$ siten, että jos kulma on suuruudeltaan $x$ radiaania ja $y$ astetta, niin
+\[x = a y.\]
+Täyskulman tapauksessa $x = 2\pi$ ja $y = 360$, eli $2\pi = 360 a$, josta voidaan ratkaista $a = \frac{\pi}{180}$.
+
+\laatikko{
+Kulman suuruus radiaaneina saadaan kertomalla kulman suuruuden lukuarvoa asteina luvulla $\frac{\pi}{180}$.
+
+Kulman suuruus asteina saadaan kertomalla kulman suuruuden lukuarvoa radiaaneina luvulla $\frac{180}{\pi}$.
+}
+
+Esimerkkejä muunnoksista asteista radiaaneiksi: \\
+\begin{tabular}{|l|l|}
+\hline
+$360^\circ$ & $2\pi$ rad \\
+\hline
+$180^\circ$ & $\pi$ rad \\
+\hline
+$120^\circ$ & $\frac{2\pi}{3}$ rad \\
+\hline
+$90^\circ$ & $\frac{\pi}{2}$ rad \\
+\hline
+$60^\circ$ & $\frac{\pi}{3}$ rad \\
+\hline
+$45^\circ$ & $\frac{\pi}{4}$ rad \\
+\hline
+$36^\circ$ & $\frac{\pi}{5}$ rad \\
+\hline
+$30^\circ$ & $\frac{\pi}{6}$ rad \\
+\hline
+\end{tabular}
+
+\begin{tehtavasivu}
+\begin{tehtava}
+Muunna kulmat radiaaneiksi
+\begin{alakohdat}
+\alakohta{$270^\circ$}
+\alakohta{$2^\circ$}
+\alakohta{$10^\circ$}
+\alakohta{$15^\circ$}
+\alakohta{$337^\circ$}
+\alakohta{$9^\circ$}
+\end{alakohdat}
+
+\begin{vastaus}
+\begin{alakohdat}
+\alakohta{$\frac{3\pi}{2}$}
+\alakohta{$\frac{\pi}{90}$}
+\alakohta{$\frac{\pi}{18}$}
+\alakohta{$\frac{\pi}{12}$}
+\alakohta{$\frac{337\pi}{180}$}
+\alakohta{$\frac{\pi}{20}$}
+\end{alakohdat}
+\end{vastaus}
+\end{tehtava}
+
+\end{tehtavasivu}
