@@ -9,3 +9,27 @@ Geometrinen lukujono $a_n$ jäsenille on voimassa ehto \( q = \frac{a_{n+1}}{a_n
 \laatikko{
 	Geometrisen lukujonon yleinen jäsen $a_n$ saadaan kaavasta \( a_n = a_1q^{n-1} \).
 }
+
+Esimerkiksi lukujono $3, 6, 12, 24, \ldots$ voi olla aritmettinen, joska sen peräkkäisten jäsenten osamäärä on aina 2. Osamäärä voi olla myös negatiivinen jonoissa  $7, -7, 7, -7, \ldots$ ja  $ -4, 2, -1, \frac{1}{2}, \ldots$.
+
+\begin{esimerkki}
+
+Kuinka mones jäsen luku 972 on geometrisessa lukujonossa $4, 12,  \ldots$?
+
+Lukujonon ensimmäinen jäsen on $a_1=4$ ja suhdeluku $q=\frac{12}{4}=3$.
+
+\begin{align*}
+	a_n &= a_1q^{n-1}  \\
+	972 &= 4 \cdot 3^{n-1}  \\
+	4 \cdot 3^{n-1} &= 972 & & | \, :4 \\
+	3^{n-1} &= 243 & & | \, \ln\\
+	\ln 3^{n-1} &= \ln 243 \\
+	(n-1)\ln 3 &= \ln 243  & & | \, : \ln 3 \\
+	n-1 &= frac{\ln 243}{\ln 3} \\
+	n &= frac{\ln 243}{\ln 3} +1\\
+	n &= 6\\
+\end{align*}
+
+Vastaus: Kuudes jäsen.
+
+\end{esimerkki}
