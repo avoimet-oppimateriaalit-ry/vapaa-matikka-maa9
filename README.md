@@ -1,3 +1,11 @@
+# Näistä voi aloittaa:
+
+1. Radiaanin esittely
+2. Ylioppilastehtäviä kurssin aiheista
+3. Lukujonojen esittely (Fibonacci ym.)
+4. Aritmeettiset lukujonot ja summa
+5. Geometriset lukujonot ja summa
+
 # Käsiteltäviä aiheita: trigonometria
 
 1. Esittely ja radiaani
