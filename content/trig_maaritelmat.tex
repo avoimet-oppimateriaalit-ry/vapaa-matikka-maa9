@@ -34,13 +34,41 @@ with paksuus(2):
 geom.kulma(A, O, P, r"$\alpha$")
 \end{kuva}
 
-Saadaan siis sinille ja kosinille yhtäpitävä määritelmä yksikköympyrän kehäpisteen y- ja x-koordinaatteina. Tällä määritelmällä voidaan määritellä sini ja kosini myös muille kun teräville kulmille. Määritellään myös negatiivisen kulman sini ja kosini tulkitsemalla kulma suunnattuna kulmana. % FIXME: selitys suunnatulle kulmalle.
+Jatketaan kolmion hypotenuusa suoraksi ja lasketaan sen ja suoran $x = 1$ leikkauspiste. Syntyvä kolmio $OP'Q'$ on yhdenmuotoinen kolmion $OPQ$ kanssa, eli
+\[\frac{y}{1} = \frac{a}{b} = \tan(\alpha).\]
+Siis tangentti voidaan laskea leikkauspisteen y-koordinaattina.
+
+\begin{kuva}
+skaalaa(3.5)
+kuvaaja.pohja(-1, 1.2, -1, 1.5)
+geom.ympyra((0, 0), 1)
+
+O = geom.piste(0, 0, "$O$", suunta = -135)
+Ap = geom.piste(1, 0, "$P'$", suunta = -45)
+
+a = 0.9
+a_deg = 180 * a / pi
+
+B = geom.piste(cos(a), sin(a), r"$Q$")
+A = geom.piste(B[0], 0, "$P$", suunta = -45)
+
+Bp = geom.piste(1, B[1] / B[0], "$Q' = (1, y)$")
+
+geom.jana(Bp, O)
+geom.jana(A, B, "$a$")
+geom.jana(O, A, "$b$")
+geom.suora(Ap, Bp)
+geom.jana(Ap, Bp, "$y$")
+geom.kulma(A, O, B, r"$\alpha$")
+\end{kuva}
+
+Sini, kosini ja tangentti voitiin siis yhtäpitävästi määritellä yksikköympyrän kehäpisteen avulla. Näitä määritelmiä käyttäen voidaan määritellä sini, kosini ja tangentti myös muille kun teräville kulmille. Määritellään myös negatiivisen kulman sini kosini ja tangentti tulkitsemalla kulma suunnattuna kulmana. % FIXME: selitys suunnatulle kulmalle.
 
 % FIXME: piirrä suunnattu kulma nuolella
 % FIXME: yli 360 asteen kulmat
 \begin{kuva}
 skaalaa(3.5)
-kuvaaja.pohja(-1, 1, -1, 1)
+kuvaaja.pohja(-1, 1.2, -1.5, 1.2)
 geom.ympyra((0, 0), 1)
 
 O = (0, 0)
@@ -50,20 +78,26 @@ a_deg = -55
 a = pi * a_deg / 180
 
 P = geom.piste(cos(a), sin(a), r"$(\cos(-55^\circ), \sin(-55^\circ))$")
-geom.jana(O, P)
+Q = geom.piste(1, P[1] / P[0], r"$(1, \tan(-55^\circ))$")
+geom.jana(O, Q)
 geom.kulma(P, O, A, "$-55^\circ$", kasvata = 0.15)
 
 a = 0.8
 a_deg = 180 * a / pi
 
 P = geom.piste(cos(a), sin(a), r"$(\cos(0,8), \sin(0,8))$")
-geom.jana(O, P)
+Q = geom.piste(1, P[1] / P[0], r"$(1, \tan(0,8))$")
+geom.jana(O, Q)
 geom.kulma(A, O, P, "$0,8\\text{ rad}$", kasvata = 0.3)
 
-a = 2.6
+a = 2.85
 a_deg = 180 * a / pi
 
 P = geom.piste(cos(a), sin(a), r"$(\cos(\alpha), \sin(\alpha))$", suunta = 180)
+Q = geom.piste(1, P[1] / P[0], r"$(1, \tan(\alpha))$")
+geom.jana(O, Q)
 geom.jana(O, P)
 geom.kulma(A, O, P, r"$\alpha$", suunta = 70)
+
+geom.suora((1, 0), (1, 1))
 \end{kuva}
