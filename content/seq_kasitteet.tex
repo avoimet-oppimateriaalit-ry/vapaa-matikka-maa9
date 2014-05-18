@@ -2,12 +2,42 @@
 
 % Pitäisikö mainita jono, siis ilman luku-?
 
-% Tämä kappale pitää kirjoittaa uudestaa selkeämmin
+Lukujonolla tarkoitetaan luvuista koostuvaa luetteloa. Sama luku voi esiintyä monta kerta samassa lukujonossa. Lukujonon lukuja kutsutaan myös lukujonon alkioksi tai jäseniksi. Luettelon lukujen järjestyksellä on väliä, eli lukujonot $(1, 2)$ ja $(1, 2)$ ovat eri lukujonot, vaikka molemmissa esiintyvät luvut $1$ ja $2$, koska niiden järjestys on eri.
 
-Kun lukuja luetellaan peräkkäin jossain määrätyssä järjestyksessä, ne muodostavata lukujonon. Sama luku voi esiintyä useaan kertaan lukujonossa. Lukujonon jäseniä voidaan nimittää myös termeiksi.
+Lukujono voi olla joko äärellisen tai äärettömän pituinen. Äärellistä lukujonoa kutsutaan myös päättyväksi koska siinä on viimeinen alkio, ja vastaavasti ääretöntä lukujonoa kutsutaan päättymättömäksi koska jokaisen alkion jälkeen on vielä muita alkioita. Lukujonon pituudella tarkoitetaan sen alkioiden määrää.
 
-Lukujonon $(a_n)$ ensimmäistä jäsentä merkitään $a_1$, toista jäsentä $a_2$ ja niin edelleen.
+\begin{esimerkki}
+$(5, 1, 2, \frac{7}{2}, \sqrt{5}, 2, 4)$ on päättyvä lukujono, jonka pituus on 7 (siinä on 7 alkiota). Lukujonon ensimmäinen alkio on 5, toinen 1, kolmas 2, jne. Luku 2 esiintyy lukujonossa kaksi kertaa, kolmantena ja seitsemäntenä alkiona.
+\end{esimerkki}
 
-Lukujonon $3, 4, 5, 6, \ldots$ yleisen eli $n$. jäsenen laskemiselle voidaan esittäää erilaisa sääntöjä. Sääntöä $a_n=n+2$ sanotaan analyyttiseksi tai eksplisiittiseksi säännöksi. Tällaisen säännön avulla mikä tahansa jonon jäsen voidaan selvittää suoraan sijoituksella.
+Koko lukujonoa merkitään usein $(a_n)$, missä $a$ on lukujonon tunnus ja $n$:llä merkitään indeksiä, eli monettako jäsentä käsitellään. Lukujonon $(a_n)$ ensimmäistä alkiota merkitään $a_1$, toista alkiota $a_2$, kolmatta $a_3$ jne. Joissain yhteyksissä indeksointi aloitetaan ykkösen sijasta nollasta, eli lukujonon alkiot ovat $(a_0, a_1, a_2, \ldots)$.
 
-Toinen tapa jonon määrittämiseksi olisi antaa rekursiokaava $a_n=a_{n-1}+1$ ja ensimmäinen jäsen $a_1=3$.
+Lukujono voidaan esittää monin tavoin. Päättyville lukujonoille kaikkien alkioiden luetteleminen on mahdollista, joskin ei aina käytännöllistä jos lukujono on pitkä. Päättymättömässä lukujonossa kaikkien alkioiden luetteleminen ei ole mahdollista, mutta jos on selvää miten lukujono jatkuu, voidaan merkitä vain muutama ensimmäinen alkio ja kolme pistettä.
+
+Lukujono $(a_n)$ voidaan määritellä antamalla yleinen kaava sen $n$. alkiolle, esimerkiksi
+\[a_n = 5n - 3\]
+määrittelee saman lukujonon kuin $(2, 7, 12, 17, 22, \ldots)$ ilman sekaannuksen vaaraa.
+
+\begin{esimerkki}
+Lukujono $(1, 3, 5, 7, 9, \ldots)$ on päättymätön lukujono. Lukujonon kaikkia alkioita ei voida luetella, mutta on helppo ymmärtää että lukujonossa aina seuraava alkio on edellinen alkio kasvatettuna kahdella, eli kuudes alkio on 11, seitsemäs 13, jne.
+\end{esimerkki}
+
+Lukujono voidaan määritellä myös rekursiivisesti, eli yleinen kaava voi viitata muihin lukujonon termeihin. Esimerkiksi rekursiokaava
+\[a_n = \left\{\begin{array}{ll}
+2,&\text{ jos } n = 1 \\
+3a_{n-1},&\text{ jos } n \neq 1
+\end{array}\right.\]
+määrittelee jonon $(2, 6, 18, 54, 162, \ldots)$, sillä jokainen termi voidaan laskea sijoittamalla rekursiokaavaa kunnes kaikki lukujonon termit katoavat lausekkeesta:
+\begin{align*}
+a_1 &= 2 \\
+a_2 &= 3 a_1 = 3\cdot 2 = 6 \\
+a_3 &= 3 a_2 = 9 a_1 = 9\cdot 2 = 18 \\
+a_4 &= 3 a_3 = 9 a_2 = 27 a_3 = 27 \cdot 2 = 54 \\
+a_5 &= 3 a_4 = 9 a_3 = 27 a_2 = 81 a_1 = 81\cdot 2 = 162. \\
+\end{align*}
+
+Rekursiokaavan pitää kuitenkin pystyä laskemaan mikä tahansa termi äärellisellä määrällä sijoituksia, eli esimerkiksi kaava
+\[a_n = a_{n + 1} + 5\]
+ei määrittele jonoa $(a_n)$ rekursiivisesti, koska kun lähdetään avaamaan kolmannen termin kaavaa,
+\[a_3 = a_4 + 5 = a_5 + 10 = a_6 + 15 = a_7 + 20 = \ldots\]
+ei päästä koskaan eroon jostain lukujonon alkiosta lausekkeessa.
