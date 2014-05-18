@@ -40,4 +40,43 @@ Rekursiokaavan pitää kuitenkin pystyä laskemaan mikä tahansa termi äärelli
 \[a_n = a_{n + 1} + 5\]
 ei määrittele jonoa $(a_n)$ rekursiivisesti, koska kun lähdetään avaamaan kolmannen termin kaavaa,
 \[a_3 = a_4 + 5 = a_5 + 10 = a_6 + 15 = a_7 + 20 = \ldots\]
-ei päästä koskaan eroon jostain lukujonon alkiosta lausekkeessa.
+ei päästä koskaan eroon jostain lukujonon alkiosta lausekkeessa. Kuitenkin aina jos viitataan vain aiempiin lukujonon termeihin, kaava määrittelee lukujonon rekursiivisesti.
+
+\begin{esimerkki}
+Fibonaccin lukujono on yksi tunnetuimmista rekursiivisesti määritellyistä lukujonoista. Lukujonon ensimmäiseksi ja toiseksi alkioksi valitaan 1, jonka jälkeen seuraava alkio saadaan aina kahden edellisen summana. Fibonaccin lukujono $(F_n)$ määritellään siis seuraavalla rekursiokaavalla
+\[F_n = \left\{\begin{array}{ll}
+1,&\text{ jos } n = 1 \text{ tai } n = 2 \\
+F_{n - 1} + F_{n - 2},&\text{ jos } n \geq 3
+\end{array}\right.\]
+
+Siis
+\begin{align*}
+F_1 &= 1 \\
+F_2 &= 1 \\
+F_3 &= F_1 + F_2 = 1 + 1 = 2 \\
+F_4 &= F_2 + F_3 = 1 + 2 = 3 \\
+F_5 &= F_3 + F_4 = 2 + 3 = 5 \\
+\end{align*}
+
+Fibonaccin lukujonon termille löytyy myös yleinen kaava, joka esitellään tehtävässä \ref{fibonacciyleinenkaavatehtava}.
+
+Fibonaccin lukujonon määritelmä vaihtelee, joskus myös määritellään $F_0 = 0$.
+\end{esimerkki}
+
+% esittele yleisen kaavan / rekursiokaavan todistaminen.
+
+\begin{tehtavasivu}
+
+\begin{tehtava}
+\label{fibonacciyleinenkaavatehtava}
+Todista että Fibonaccin lukujonon
+\[F_n = \left\{\begin{array}{ll}
+1,&\text{ jos } n = 1 \text{ tai } n = 2 \\
+F_{n - 1} + F_{n - 2},&\text{ jos } n \geq 3
+\end{array}\right.\]
+yleinen kaava on 
+\[F_n = \frac{1}{\sqrt{5}} \left(\left(\frac{1+\sqrt{5}}{2}\right)^n - \left(\frac{1-\sqrt{5}}{2}\right)^n\right).\]
+(Vihje: Todista että yleinen kaava toteuttaa rekursioyhtälön.)
+\end{tehtava}
+
+\end{tehtavasivu}
