@@ -1,3 +1,6 @@
+\providecommand{\lukufilter}[2]{#2} % ylikirjoitetaan kaanna_luku.sh -skriptistä.
+\newcommand{\luku}[1]{\lukufilter{#1}{\include{content/#1}}} % luku
+
 \Opensolutionfile{ans}[content/vastaukset]
 
 \part{Trigonometriset funktiot}
@@ -11,7 +14,7 @@
 \liitetyyli
 
 \Opensolutionfile{ans}[content/yovastaukset]
-\input{content/yotehtavia}
+\luku{yotehtavia}
 \Closesolutionfile{ans}
 \subsection*{Vastaukset}
 \input{content/yovastaukset}
