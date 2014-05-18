@@ -13,11 +13,33 @@ geom.suorakulma(C, B, A)
 Kaikki suorakulmiaiset kolmiot, joissa yksi terävä kulma on $\alpha$, ovat kk-säännön nojalla yhdenmuotoisia. Siis sivujen $a$, $b$ ja $c$ keskinäiset suhteet riippuvat vain kulmasta $\alpha$. Näille suhteille on annettu nimet sini, kosini ja tangentti
 \[\sin(\alpha) = \frac{a}{c},\hspace{1cm}\cos(\alpha) = \frac{b}{c}, \hspace{1cm}\tan(\alpha) = \frac{a}{b}.\]
 
-Tätä määritelmää voidaan kuitenkin yleistää koskemaan muitakin kuin teräviä kulmia. Valitaan kehäpiste yksikköympyrän kehältä siten, että origoon muodostuu kulma $\alpha$ positiivisen x-akselin ja valitun kehäpisteen välille. Tulkitaan kulma $\alpha$ suunnattuna, eli negatiivinen kulma kasvaa x-akselilta myötäpäivään ja positiivinen vastapäivään. Nyt määritellään sini ja kosini valitun kehäpisteen y- ja x-koordinaatteina. % FIXME: parempi selitys suunnatulle kulmalle.
+Jos valitaan $c = 1$, ja piirretään kulma $\alpha$ origoon siten, että suora kulma on positiivisella x-akselilla, huomataan että kolmas kärki on yksikköympyrän kehällä ja sen koordinaatit ovat $(b, a) = (\cos(\alpha), \sin(\alpha))$:
+
+\begin{kuva}
+skaalaa(3.5)
+kuvaaja.pohja(-1, 1, -1, 1)
+geom.ympyra((0, 0), 1)
+
+O = (0, 0)
+A = (1, 0)
+
+a = 0.9
+a_deg = 180 * a / pi
+
+P = geom.piste(cos(a), sin(a), r"$(\cos(\alpha), \sin(\alpha))$")
+with paksuus(2):
+	geom.jana(P, O, "$c = 1$")
+	geom.jana((P[0], 0), P, "$a$")
+	geom.jana(O, (P[0], 0), "$b$")
+geom.kulma(A, O, P, r"$\alpha$")
+\end{kuva}
+
+Saadaan siis sinille ja kosinille yhtäpitävä määritelmä yksikköympyrän kehäpisteen y- ja x-koordinaatteina. Tällä määritelmällä voidaan määritellä sini ja kosini myös muille kun teräville kulmille. Määritellään myös negatiivisen kulman sini ja kosini tulkitsemalla kulma suunnattuna kulmana. % FIXME: selitys suunnatulle kulmalle.
 
 % FIXME: piirrä suunnattu kulma nuolella
+% FIXME: yli 360 asteen kulmat
 \begin{kuva}
-skaalaa(4)
+skaalaa(3.5)
 kuvaaja.pohja(-1, 1, -1, 1)
 geom.ympyra((0, 0), 1)
 
