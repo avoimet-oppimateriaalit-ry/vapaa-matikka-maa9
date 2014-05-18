@@ -1,1 +1,47 @@
 \section{Sini, kosini ja tangentti}
+\begin{kuva}
+A = (0, 0)
+B = (4, 0)
+C = (4, 2.5)
+geom.jana(A, B, "$b$")
+geom.jana(B, C, "$a$")
+geom.jana(C, A, "$c$")
+geom.kulma(B, A, C, r"$\alpha$")
+geom.suorakulma(C, B, A)
+\end{kuva}
+
+Kaikki suorakulmiaiset kolmiot, joissa yksi terävä kulma on $\alpha$, ovat kk-säännön nojalla yhdenmuotoisia. Siis sivujen $a$, $b$ ja $c$ keskinäiset suhteet riippuvat vain kulmasta $\alpha$. Näille suhteille on annettu nimet sini, kosini ja tangentti
+\[\sin(\alpha) = \frac{a}{c},\hspace{1cm}\cos(\alpha) = \frac{b}{c}, \hspace{1cm}\tan(\alpha) = \frac{a}{b}.\]
+
+Tätä määritelmää voidaan kuitenkin yleistää koskemaan muitakin kuin teräviä kulmia. Valitaan kehäpiste yksikköympyrän kehältä siten, että origoon muodostuu kulma $\alpha$ positiivisen x-akselin ja valitun kehäpisteen välille. Tulkitaan kulma $\alpha$ suunnattuna, eli negatiivinen kulma kasvaa x-akselilta myötäpäivään ja positiivinen vastapäivään. Nyt määritellään sini ja kosini valitun kehäpisteen y- ja x-koordinaatteina. % FIXME: parempi selitys suunnatulle kulmalle.
+
+% FIXME: piirrä suunnattu kulma nuolella
+\begin{kuva}
+skaalaa(4)
+kuvaaja.pohja(-1, 1, -1, 1)
+geom.ympyra((0, 0), 1)
+
+O = (0, 0)
+A = (1, 0)
+
+a_deg = -55
+a = pi * a_deg / 180
+
+P = geom.piste(cos(a), sin(a), r"$(\cos(-55^\circ), \sin(-55^\circ))$")
+geom.jana(O, P)
+geom.kulma(P, O, A, "$-55^\circ$", kasvata = 0.15)
+
+a = 0.8
+a_deg = 180 * a / pi
+
+P = geom.piste(cos(a), sin(a), r"$(\cos(0,8), \sin(0,8))$")
+geom.jana(O, P)
+geom.kulma(A, O, P, "$0,8\\text{ rad}$", kasvata = 0.3)
+
+a = 2.6
+a_deg = 180 * a / pi
+
+P = geom.piste(cos(a), sin(a), r"$(\cos(\alpha), \sin(\alpha))$", suunta = 180)
+geom.jana(O, P)
+geom.kulma(A, O, P, r"$\alpha$", suunta = 70)
+\end{kuva}
